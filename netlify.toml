@@ -1,0 +1,57 @@
+# Netlify configuration file for Peta Sebaran Hotspot Adaro Indonesia
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# Proxy API routes to Netlify Functions
+[[redirects]]
+  from = "/api/hotspots"
+  to = "/.netlify/functions/hotspots"
+  status = 200
+
+[[redirects]]
+  from = "/api/iupk"
+  to = "/.netlify/functions/iupk"
+  status = 200
+
+[[redirects]]
+  from = "/api/geocode"
+  to = "/.netlify/functions/geocode"
+  status = 200
+
+[[redirects]]
+  from = "/api/notify-wa"
+  to = "/.netlify/functions/notify-wa"
+  status = 200
+
+[[redirects]]
+  from = "/api/notify-telegram"
+  to = "/.netlify/functions/notify-telegram"
+  status = 200
+
+[[redirects]]
+  from = "/api/auto-notify/status"
+  to = "/.netlify/functions/auto-notify-status"
+  status = 200
+
+[[redirects]]
+  from = "/api/auto-notify/run"
+  to = "/.netlify/functions/auto-notify-run"
+  status = 200
+
+[functions."scheduled-check"]
+  schedule = "*/10 * * * *"
+
+# Single Page Application (SPA) redirect for client-side routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

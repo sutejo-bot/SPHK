@@ -1,0 +1,8 @@
+{
+  "name": "Pantau Bumi",
+  "description": "Sistem pemantauan anomali termal dan titik panas real-time multi-satelit untuk wilayah konsesi IUPK dan koridor hauling road.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

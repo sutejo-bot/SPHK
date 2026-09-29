@@ -1,0 +1,9 @@
+@import "tailwindcss";
+ 
+/* Leaflet custom div-icon transparent wrappers */
+.custom-leaflet-icon,
+.custom-km-icon,
+.custom-km-dot-icon {
+  background: transparent !important;
+  border: none !important;
+}
